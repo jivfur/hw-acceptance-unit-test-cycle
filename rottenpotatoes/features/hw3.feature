@@ -45,3 +45,19 @@ Scenario: Destroy a movie
    When I press "Delete"
    Then  I should be on the home page
    And I read Movie "Star Wars" deleted.
+   
+Scenario: Create a movie
+  Given I am on the home page
+  When I follow "Add new movie"
+  Then I should visualize  new movie page
+  And  I fill in "Title" with "My new Movie"
+  And  I fill in "Director" with "Ivan Fuentes"
+  And I select "G" from "Rating"
+  And I select "2018" from "movie_release_date_1i"
+  And I select "March" from "movie_release_date_2i"
+  And I select "20" from "movie_release_date_3i"
+  And I press "Save Changes"
+  Then I should be on the home page
+  And I should see "My new Movie"
+  
+  

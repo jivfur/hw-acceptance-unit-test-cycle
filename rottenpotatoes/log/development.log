@@ -1150,3 +1150,27 @@ Processing by MoviesController#show as HTML
   [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
   Rendered movies/show.html.haml within layouts/application (3.9ms)
 Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/new" for 128.194.145.78 at 2018-03-20 19:58:22 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (25.6ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/new" for 128.194.145.78 at 2018-03-20 20:09:27 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (10.9ms)
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 128.194.145.78 at 2018-03-20 20:09:28 +0000
+
+
+Started GET "/assets/application.self-ac4347b135ab8935f2dd20089f2acc8bec1d6b2ad528a80fcb03cd445dbd4d27.js?body=1" for 128.194.145.78 at 2018-03-20 20:09:28 +0000
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 128.194.145.78 at 2018-03-20 20:09:28 +0000
+
+
+Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 128.194.145.78 at 2018-03-20 20:09:28 +0000
