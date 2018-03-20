@@ -1100,3 +1100,23 @@ Processing by MoviesController#show as HTML
   [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 7]]
   Rendered movies/show.html.haml within layouts/application (3.4ms)
 Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/7" for 50.24.145.240 at 2018-03-20 02:19:55 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered movies/show.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 19ms (Views: 12.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/new" for 50.24.145.240 at 2018-03-20 02:20:05 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (10.3ms)
+Completed 200 OK in 25ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/new" for 50.24.145.240 at 2018-03-20 02:20:08 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 10ms (Views: 10.3ms | ActiveRecord: 0.0ms)

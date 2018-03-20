@@ -18,5 +18,6 @@ end
 
 
 Then("the director of {string} should be {string}")  do |title, director|
-  expect(page).to have_content("#{director} was successfully updated.")
+  expect(page).to have_content("#{title} was successfully updated.")
 end
+

@@ -22,11 +22,20 @@ module NavigationHelpers
       
     when /^the details page for "(.+)"$/
       movie_path(Movie.find_by_title($1.to_s).id)
+      
+     when /^the Similar Movies page for "(.*)"$/
+      samedirector_path(Movie.find_by_title($1))
+      
+    when /^the RottenPotatoes home page$/
+      then '/movies'
+    
+    when /^the movie page$/
+      then '/movies'
     # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
-
+    
     else
       begin
         page_name =~ /^the (.*) page$/

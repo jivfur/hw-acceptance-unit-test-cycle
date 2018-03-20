@@ -56,10 +56,15 @@ class MoviesController < ApplicationController
 
   ###I added this method
   def samedirector
-    logger.debug "HERE"
-    moviesDir = Movie.find params[:id]
-    logger.debug(moviesDir.description)
-    @movies = Movie.where(director: moviesDir.director)
+    @movieOriginal = Movie.find(params[:id])
+    dir =@movieOriginal.director
+    @movies = Movie.where(director: @movieOriginal.director)
+    if dir.empty? then
+      flash[:notice]="'#{@movieOriginal.title}' has no director info"
+      redirect_to movies_path
+    else
+      @movies = Movie.where(Director: dir)
+    end
   end
 
   def destroy
