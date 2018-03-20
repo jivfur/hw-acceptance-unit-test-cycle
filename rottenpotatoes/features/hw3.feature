@@ -40,4 +40,8 @@ Scenario: Sort the movies
   When I follow "Release Date"
   Then I should see the movies sorted by release date
 
-  
+Scenario: Destroy a movie
+   Given I am on the details page for "Star Wars"
+   When I press "Delete"
+   Then  I should be on the home page
+   And I read Movie "Star Wars" deleted.

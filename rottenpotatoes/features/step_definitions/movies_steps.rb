@@ -45,3 +45,7 @@ Then("I should see the movies sorted by release date") do
   end
 end
 
+
+Then("I read Movie {string} deleted.") do |title|
+   expect(page).to have_content("Movie '#{title}' deleted")
+end
