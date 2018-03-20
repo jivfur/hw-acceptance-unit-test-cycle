@@ -54,6 +54,14 @@ class MoviesController < ApplicationController
     redirect_to movie_path(@movie)
   end
 
+  ###I added this method
+  def samedirector
+    logger.debug "HERE"
+    moviesDir = Movie.find params[:id]
+    logger.debug(moviesDir.description)
+    @movies = Movie.where(director: moviesDir.director)
+  end
+
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy

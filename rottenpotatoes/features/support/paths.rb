@@ -17,6 +17,11 @@ module NavigationHelpers
       '/'
 
     # Add more mappings here.
+    when /^the edit page for "(.+)"$/ 
+      edit_movie_path(Movie.find_by_title($1.to_s).id)
+      
+    when /^the details page for "(.+)"$/
+      movie_path(Movie.find_by_title($1.to_s).id)
     # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i
