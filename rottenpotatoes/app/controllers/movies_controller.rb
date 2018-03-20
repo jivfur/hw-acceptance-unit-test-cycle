@@ -58,7 +58,6 @@ class MoviesController < ApplicationController
   def samedirector
     @movieOriginal = Movie.find(params[:id])
     dir =@movieOriginal.director
-    @movies = Movie.where(director: @movieOriginal.director)
     if dir.empty? then
       flash[:notice]="'#{@movieOriginal.title}' has no director info"
       redirect_to movies_path
