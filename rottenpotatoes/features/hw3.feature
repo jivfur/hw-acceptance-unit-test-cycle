@@ -59,5 +59,4 @@ Scenario: Create a movie
   And I press "Save Changes"
   Then I should be on the home page
   And I should see "My new Movie"
-  
-  
+

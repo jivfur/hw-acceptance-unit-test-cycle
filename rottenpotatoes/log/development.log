@@ -1174,3 +1174,38 @@ Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6
 
 
 Started GET "/assets/application.self-2b9b4ceb35a4568bfbe3001eb6cf7d691787c8ec9b2018eecbc3c235cc74b7a4.css?body=1" for 128.194.145.78 at 2018-03-20 20:09:28 +0000
+
+
+Started GET "/movies/1" for 128.194.145.78 at 2018-03-20 20:23:45 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 18ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1/edit" for 128.194.145.78 at 2018-03-20 20:23:48 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/edit.html.haml within layouts/application (12.5ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/movies/1" for 128.194.145.78 at 2018-03-20 20:24:44 +0000
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1GMq0JF8fM6HqoUG7SZFVOin8roSngdzhxPR42fzMXMR2zJM8ep6Dq66OZ3vcvLj0W94Ph1wGW8BiwuY+GU81w==", "movie"=>{"title"=>"Aladdin 2", "director"=>"Ivan Fuentes", "rating"=>"NC-17", "release_date(1i)"=>"1987", "release_date(2i)"=>"2", "release_date(3i)"=>"7"}, "commit"=>"Update Movie Info", "id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "movies" SET "title" = ?, "rating" = ?, "director" = ?, "release_date" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["title", "Aladdin 2"], ["rating", "NC-17"], ["director", "Ivan Fuentes"], ["release_date", "1987-02-07 00:00:00.000000"], ["updated_at", "2018-03-20 20:24:44.858829"], ["id", 1]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to https://4e5ac6e39cf24213902310e431c3d7a8.vfs.cloud9.us-east-2.amazonaws.com/movies/1
+Completed 302 Found in 9ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/movies/1" for 128.194.145.78 at 2018-03-20 20:24:44 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms)
