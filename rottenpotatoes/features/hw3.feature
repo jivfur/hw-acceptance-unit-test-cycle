@@ -32,3 +32,12 @@ Scenario: can't find similar movies if we don't know director (sad path)
   When  I follow "Find Movies With Same Director"
   Then  I should be on the home page
   And   I should see "'Alien' has no director info"
+  
+Scenario: Sort the movies
+  Given I am on the home page
+  When I follow "Movie Title"
+  Then I should see the movies sorted by title
+  When I follow "Release Date"
+  Then I should see the movies sorted by release date
+
+  

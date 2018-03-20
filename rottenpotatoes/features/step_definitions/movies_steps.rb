@@ -21,3 +21,27 @@ Then("the director of {string} should be {string}")  do |title, director|
   expect(page).to have_content("#{title} was successfully updated.")
 end
 
+Then("I should see the movies sorted by title") do 
+  previous = ""
+  page.all("tbody tr").each do |tr|
+    #puts tr.all('td')
+    if previous <= tr.all('td')[0].text
+      previous = tr.all('td')[0].text
+    else
+      return nil
+    end
+  end
+end
+
+Then("I should see the movies sorted by release date") do 
+  previous = "1900-01-01".to_date
+  page.all("tbody tr").each do |tr|
+    #puts tr.all('td')
+    if previous <= tr.all('td')[2].text.to_date
+      previous = tr.all('td')[2].text.to_date
+    else
+      return nil
+    end
+  end
+end
+
